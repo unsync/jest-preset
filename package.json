@@ -1,7 +1,7 @@
 {
   "name": "@unsync/jest-preset",
   "type": "module",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Shared jest-preset for my projects",
   "license": "MIT",
   "repository": {
