@@ -13,6 +13,7 @@
   ],
   "main": "jest-preset.cjs",
   "files": [
+    "scripts/postinstall.cjs",
     "jest-preset.cjs"
   ],
   "engines": {
@@ -24,7 +25,8 @@
     "test": "exit 0",
     "release:patch": "npm version -m 'release:patch' patch",
     "release:minor": "npm version -m 'release:minor' minor",
-    "release:major": "npm version -m 'release:major' major"
+    "release:major": "npm version -m 'release:major' major",
+    "postinstall": "node scripts/postinstall.cjs"
   },
   "dependencies": {
     "@types/jest": "^29.5.11",
