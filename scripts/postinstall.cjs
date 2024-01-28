@@ -7,6 +7,9 @@ const scriptCommand = 'npm run build && node --experimental-vm-modules node_modu
 const packageJsonPath = path.join(process.cwd(), 'package.json')
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath))
 
+if(packageJson.name === '@unsync/jest-preset') {
+    return
+}
 packageJson.scripts[scriptName] = scriptCommand
 packageJson.jest = {
     "preset": "@unsync/jest-preset"
