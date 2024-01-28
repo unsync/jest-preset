@@ -7,7 +7,7 @@ const scriptCommand = 'npm run build && node --experimental-vm-modules node_modu
 console.info(`postinstall: starting`)
 
 const packageJsonPath = require.main.paths[0].split('node_modules')[0] + 'package.json'
-if(fs.existsSync(packageJsonPath)) {
+if(!fs.existsSync(packageJsonPath)) {
     console.info(`postinstall: ${packageJsonPath} do not exist`)
     return
 }
