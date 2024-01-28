@@ -13,13 +13,15 @@
   ],
   "main": "jest-preset.cjs",
   "files": [
-    "scripts/postinstall.cjs",
-    "jest-preset.cjs"
+    "jest-preset.cjs",
+    "scripts/postinstall.cjs"
   ],
   "engines": {
     "node": ">=18"
   },
   "scripts": {
+    "checkdeps": "ncu",
+    "checkdeps:apply": "ncu -u",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "exit 0",
@@ -28,15 +30,16 @@
     "release:major": "npm version -m 'release:major' major",
     "postinstall": "node scripts/postinstall.cjs"
   },
+  "peerDependencies": {
+    "jest": "^29.7.0"
+  },
   "dependencies": {
-    "@types/jest": "^29.5.11",
     "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.11",
     "ts-jest": "^29.1.2"
   },
   "devDependencies": {
-    "@unsync/eslint": "^1.0.18"
-  },
-  "peerDependencies": {
-    "jest": "^29.7.0"
+    "@unsync/eslint": "^1.0.22",
+    "npm-check-updates": "^16.14.14"
   }
 }
