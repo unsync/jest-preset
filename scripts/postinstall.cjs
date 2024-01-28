@@ -4,6 +4,8 @@ const path = require('path')
 const scriptName = 'test'
 const scriptCommand = 'npm run build && node --experimental-vm-modules node_modules/jest/bin/jest.js'
 
+console.info(`postinstall: starting`)
+
 const packageJsonPath = path.join(process.cwd(), 'package.json')
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath))
 
