@@ -8,8 +8,11 @@ const packageJsonPath = path.join(process.cwd(), 'package.json')
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath))
 
 if(packageJson.name === '@unsync/jest-preset') {
+    console.info(`postinstall: do not run on ${packageJson.name}`)
     return
 }
+
+console.info('postinstall: add jest-preset script')
 packageJson.scripts[scriptName] = scriptCommand
 packageJson.jest = {
     "preset": "@unsync/jest-preset"
